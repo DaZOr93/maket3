@@ -345,8 +345,8 @@ ul {
     margin-right: auto;
     justify-content: space-between;
     margin-top: 52px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     flex-wrap: wrap;
 }
 
@@ -553,21 +553,33 @@ ul {
     margin-top: 9px;
 }
 
-.product-item-color {
-    display: flex;
+.product-item-color-container {
     margin-left: auto;
     margin-right: auto;
     width: 227px;
     margin-top: 10px;
+    overflow: hidden;
+    height: 20px;
+    background: #FFFFFF;
+    position: absolute;
+    left: 20px;
+}
+
+.product-item-color {
+    display: flex;
+
+    flex-wrap: wrap;
+
 }
 
 .product-item-color img {
     margin-left: 3px;
     height: 20px;
     width: 20px;
+    margin-bottom: 9px;
 }
 
-.product-item-color img:first-child {
+.product-item-color img:first-child, .product-item-color img:nth-child(10n+1) {
     margin-left: 0px;
 }
 
@@ -581,10 +593,36 @@ ul {
     border-radius: 30px;
     width: 90px;
     height: 19px;
-    margin-top: 10px;
+    margin-top: 40px;
     margin-right: auto;
     margin-left: auto;
     cursor: pointer;
+}
+
+.button-hide-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #D0D0D0;
+    box-sizing: border-box;
+    border-radius: 30px;
+    width: 90px;
+    height: 17.71px;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.button-hide-more p {
+    font-family: Bw Modelica Cyrillic DEMO;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 10px;
+    color: #535353;
+    margin-right: 11px;
 }
 
 .button-show-more p {
@@ -1361,6 +1399,24 @@ footer {
         max-width: none;
         margin-top: 5px;
     }
+
+    .footer-content::before, .footer-content::after, .benefits::before, .benefits::after {
+        content: '';
+        width: 100%;
+        order: 1;
+    }
+
+    .footer-menu:nth-child(n + 4), .benefits-item:nth-child(n + 4) {
+        order: 2;
+    }
+
+    .benefits {
+        justify-content: space-around;
+    }
+
+    .benefits-item {
+        margin-top: 10px;
+    }
 }
 
 @media only screen and (max-width: 735px) {
@@ -1426,10 +1482,7 @@ footer {
     }
 }
 
-@media only screen and (max-width: 530px) {
-    .benefits {
-        justify-content: space-around;
-    }
+@media only screen and (max-width: 660px) {
 
     .welcome-title {
         font-size: 15px;
