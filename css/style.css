@@ -565,7 +565,7 @@ ul {
     left: 20px;
 }
 .show-color {
-    height: 20px;
+    height: auto;
 
 }
 .product-item-color {
