@@ -564,7 +564,10 @@ ul {
     position: absolute;
     left: 20px;
 }
+.show-color {
+    height: 20px;
 
+}
 .product-item-color {
     display: flex;
 
